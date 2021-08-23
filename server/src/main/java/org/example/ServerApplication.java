@@ -72,8 +72,7 @@ public class ServerApplication {
     }
 
     @Service
-    public class ReceiveService {
-
+    public static class ReceiveService {
         @StreamListener(Sink.INPUT)
         public void receiveInput1(String receiveMsg) {
             System.out.println("input receive: " + receiveMsg);
