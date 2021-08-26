@@ -25,6 +25,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.cloud.alibaba>2.1.0.RELEASE</spring.cloud.alibaba>
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+    <elasticsearch.version>7.3.0</elasticsearch.version>
   </properties>
 
   <dependencyManagement>
@@ -48,9 +49,21 @@
       </dependency>
 
       <dependency>
+        <groupId>org.elasticsearch.client</groupId>
+        <artifactId>elasticsearch-rest-high-level-client</artifactId>
+        <version>${elasticsearch.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.elasticsearch</groupId>
+        <artifactId>elasticsearch</artifactId>
+        <version>${elasticsearch.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.11</version>
+        <version>4.12</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
