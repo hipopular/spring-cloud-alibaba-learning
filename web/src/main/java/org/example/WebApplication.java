@@ -27,40 +27,6 @@ public class WebApplication {
         SpringApplication.run(WebApplication.class,args);
     }
 
-    @Component
-    static class NacosConfing implements ApplicationRunner{
-
-        @Value("${profile}")
-        String profile;
-
-        @Override
-        public void run(ApplicationArguments args) {
-            System.out.printf("Initial username=%s%n", profile);
-        }
-    }
-
-    @RestController
-    public class WebController{
-
-        @Autowired
-        private LoadBalancerClient loadBalancerClient;
-
-        @Autowired
-        private RestTemplate restTemplate;
-
-        @Value("${spring.application.name}")
-        private String appName;
-
-        @SentinelResource("hello")
-        @GetMapping("/hello")
-        public String hello(){
-            //使用 LoadBalanceClient 和 RestTemolate 结合的方式来访问
-            ServiceInstance serviceInstance = loadBalancerClient.choose("server");
-            String url = String.format("http://%s:%s/index/%s",serviceInstance.getHost(),serviceInstance.getPort(),appName);
-            System.out.println("request url:"+url);
-            return restTemplate.getForObject(url,String.class);
-        }
-    }
 
     //实例化 RestTemplate 实例
     @Bean

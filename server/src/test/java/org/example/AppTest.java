@@ -1,10 +1,7 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
-
-import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
-import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.client.RestHighLevelClient;
+import com.alibaba.fastjson.JSON;
+import org.example.domain.User;
 import org.example.server.elasticsearch.ElasticsearchService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,4 +25,29 @@ public class AppTest {
         // 创建索引
         elasticsearchService.createIndex("popular_index");
     }
+
+    @Test
+    public void existIndexTest() throws Exception {
+        // 判断索引是否存在
+        boolean existIndex = elasticsearchService.existIndex("popular_index");
+        System.out.println(existIndex);
+    }
+
+    @Test
+    public void deleteIndexTest() throws Exception {
+        // 删除索引
+        elasticsearchService.deleteIndex("test_index");
+    }
+
+    @Test
+    public void addDocumentTest() throws Exception {
+        // 新增文档
+        User user = new User();
+        user.setId(1L);
+        user.setAge(12);
+        user.setName("popular");
+        user.setDescription("popular description");
+        elasticsearchService.addDocument("popular_doc_index", user.getId().toString(), JSON.toJSONString(user));
+    }
+
 }
