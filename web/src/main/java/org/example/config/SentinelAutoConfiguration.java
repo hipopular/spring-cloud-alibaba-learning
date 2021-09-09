@@ -51,7 +51,7 @@ public class SentinelAutoConfiguration {
         properties.put(PropertyKeyConst.NAMESPACE, NACOS_NAMESPACE_ID);
 
         ReadableDataSource<String, List<FlowRule>>
-                flowRuleDataSource = new NacosDataSource<>(properties, groupId, dataId,this::allConfig);
+                flowRuleDataSource = new NacosDataSource<>(properties, groupId, dataId, this::allConfig);
         FlowRuleManager.register2Property(flowRuleDataSource.getProperty());
     }
 
