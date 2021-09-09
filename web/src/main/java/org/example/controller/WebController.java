@@ -30,4 +30,9 @@ public class WebController{
         System.out.println("request url:"+url);
         return restTemplate.getForObject(url,String.class);
     }
+
+    @GetMapping("/sentinel")
+    public String sentinel(){
+        return " Hello World";
+    }
 }
