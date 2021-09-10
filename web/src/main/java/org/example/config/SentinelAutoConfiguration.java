@@ -15,6 +15,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
@@ -28,13 +29,17 @@ public class SentinelAutoConfiguration {
     ApplicationContext applicationContext;
 
     // nacos server ip
-    private static final String remoteAddress = "192.168.104.124:8848";
+    @Value("${spring.cloud.nacos.config.server-addr}")
+    private String remoteAddress;
     // nacos group
-    private static final String groupId = "popular";
+    @Value("${spring.cloud.nacos.config.group}")
+    private String groupId;
     // nacos dataId
-    private static final String dataId = "com.alibaba.csp.sentinel.demo.flow.rule";
+    @Value("${sentinel.cloud.data-id}")
+    private String dataId;
     // fill your namespace id,if you want to use namespace. for example: 0f5c7314-4983-4022-ad5a-347de1d1057d,you can get it on nacos's console
-    private static final String NACOS_NAMESPACE_ID = "19993610-ad88-4749-9dd7-b1a355146ddd";
+    @Value("${spring.cloud.nacos.config.namespace}")
+    private String NACOS_NAMESPACE_ID;
 
     private static final String SYSTEM_DEFAULT_RESOURCE = "/system/default";
 
