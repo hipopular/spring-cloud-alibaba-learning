@@ -55,18 +55,22 @@ public class SentinelAutoConfiguration {
         FlowRuleManager.register2Property(flowRuleDataSource.getProperty());
     }
 
-    private List<FlowRule> allConfig(String source){
+    private List<FlowRule> allConfig(String source) {
+        System.out.printf(" sentinel source : %s", source);
         RequestMappingHandlerMapping mapping = applicationContext.getBean(RequestMappingHandlerMapping.class);
         Map<RequestMappingInfo, HandlerMethod> methodMap = mapping.getHandlerMethods();
-        Set<String> urls = methodMap.keySet().stream().map(x -> x.getPatternsCondition().getPatterns()).flatMap(Collection::stream).collect(Collectors.toSet());
+        Set<String> urls =
+                methodMap.keySet().stream().map(x -> x.getPatternsCondition().getPatterns()).flatMap(Collection::stream)
+                        .collect(Collectors.toSet());
 
-        List<FlowRule> ruleList = JSON.parseObject(source, new TypeReference<List<FlowRule>>() {});
+        List<FlowRule> ruleList = JSON.parseObject(source, new TypeReference<List<FlowRule>>() {
+        });
         Set<String> ruleResourceUri = ruleList.stream().map(FlowRule::getResource).collect(Collectors.toSet());
         urls.removeAll(ruleResourceUri);
         FlowRule systemDefaultRule = ruleList.stream().filter(e -> e.getResource().equals(SYSTEM_DEFAULT_RESOURCE))
                 .collect(Collectors.toList()).get(0);
 
-        List<FlowRule>  defaultRules = urls.stream().map(e -> {
+        List<FlowRule> defaultRules = urls.stream().map(e -> {
             FlowRule flowRule = new FlowRule();
             flowRule.setRefResource(e);
             flowRule.setCount(systemDefaultRule.getCount());
@@ -77,6 +81,7 @@ public class SentinelAutoConfiguration {
             return flowRule;
         }).collect(Collectors.toList());
         ruleList.addAll(defaultRules);
+        System.out.printf(" rule resource list : %s", JSON.toJSONString(ruleList));
         return ruleList;
     }
 }
