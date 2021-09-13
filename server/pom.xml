@@ -39,6 +39,12 @@
     <dependency>
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>fastjson</artifactId>
+          <groupId>com.alibaba</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -54,6 +60,10 @@
           <artifactId>httpclient</artifactId>
           <groupId>org.apache.httpcomponents</groupId>
         </exclusion>
+        <exclusion>
+          <artifactId>guava</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
 
@@ -65,6 +75,18 @@
         <exclusion>
           <artifactId>elasticsearch-rest-client</artifactId>
           <groupId>org.elasticsearch.client</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>fastjson</artifactId>
+          <groupId>com.alibaba</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>guava</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>objenesis</artifactId>
+          <groupId>org.objenesis</groupId>
         </exclusion>
       </exclusions>
     </dependency>
