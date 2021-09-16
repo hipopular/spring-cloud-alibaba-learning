@@ -72,7 +72,7 @@ public class SentinelAutoConfiguration {
 
         List<FlowRule> defaultRules = urls.stream().map(e -> {
             FlowRule flowRule = new FlowRule();
-            flowRule.setRefResource(e);
+            flowRule.setResource(e);
             flowRule.setCount(systemDefaultRule.getCount());
             flowRule.setLimitApp(systemDefaultRule.getLimitApp());
             flowRule.setGrade(systemDefaultRule.getGrade());
