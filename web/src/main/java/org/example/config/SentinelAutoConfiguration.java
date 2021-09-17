@@ -14,6 +14,8 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -24,6 +26,8 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 @Configuration
 public class SentinelAutoConfiguration {
+
+    private static final Logger log = LoggerFactory.getLogger(SentinelAutoConfiguration.class);
 
     @Autowired
     ApplicationContext applicationContext;
@@ -56,7 +60,7 @@ public class SentinelAutoConfiguration {
     }
 
     private List<FlowRule> allConfig(String source) {
-        System.out.printf(" sentinel source : %s", source);
+        log.info(" sentinel source : {}", source);
         RequestMappingHandlerMapping mapping = applicationContext.getBean(RequestMappingHandlerMapping.class);
         Map<RequestMappingInfo, HandlerMethod> methodMap = mapping.getHandlerMethods();
         Set<String> urls =
@@ -81,7 +85,7 @@ public class SentinelAutoConfiguration {
             return flowRule;
         }).collect(Collectors.toList());
         ruleList.addAll(defaultRules);
-        System.out.printf(" rule resource list : %s", JSON.toJSONString(ruleList));
+        log.info(" rule resource list : {}", JSON.toJSONString(ruleList));
         return ruleList;
     }
 }
