@@ -6,6 +6,8 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
+    <property name="LOG_PATH" value="${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}" />
+
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
     <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
@@ -27,7 +29,7 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 指定日志文件的名称 -->
-        <File>${LOG_PATH}/${LOG_FILE}-system.log</File>
+        <file>${LOG_PATH}/${LOG_FILE}-system.log</file>
         <!--
         当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
         TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
