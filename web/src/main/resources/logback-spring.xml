@@ -70,7 +70,7 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <!-- hibernate logger -->
     <logger name="com.example" level="debug" />
     <!-- Spring framework logger -->
-    <logger name="org.springframework" level="debug" additivity="false"/>
+    <logger name="org.springframework" level="info" additivity="false"/>
 
     <springProfile name="dev">
         <root level="INFO">

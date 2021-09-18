@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class NacosController{
 
-    @Value("${profile}")
+    @Value("${spring.profiles.active}")
     String profile;
 
     public void nacosTest() {
