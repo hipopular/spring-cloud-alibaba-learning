@@ -39,7 +39,7 @@ public class SentinelAutoConfiguration {
     @Value("${spring.cloud.nacos.config.group}")
     private String groupId;
     // nacos dataId
-    @Value("${sentinel.cloud.data-id}")
+    @Value("${spring.application.name}-sentinel-${spring.profiles.active}.flow")
     private String dataId;
     // fill your namespace id,if you want to use namespace. for example: 0f5c7314-4983-4022-ad5a-347de1d1057d,you can get it on nacos's console
     @Value("${spring.cloud.nacos.config.namespace}")
