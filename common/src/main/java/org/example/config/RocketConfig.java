@@ -11,13 +11,14 @@ public class RocketConfig {
 
     @Value("${spring.cloud.stream.bindings.input.group}")
     private String group;
+
     @Value("${spring.cloud.stream.rocketmq.binder.name-server}")
-    private String namesrvAddr;
+    private String addr;
 
     @Bean
     public DefaultMQProducer producer() throws MQClientException {
         DefaultMQProducer producer = new DefaultMQProducer(group);
-        producer.setNamesrvAddr(namesrvAddr);
+        producer.setNamesrvAddr(addr);
         producer.start();
         return producer;
     }

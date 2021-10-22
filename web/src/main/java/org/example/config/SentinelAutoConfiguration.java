@@ -34,7 +34,7 @@ public class SentinelAutoConfiguration {
 
     // nacos server ip
     @Value("${spring.cloud.nacos.config.server-addr}")
-    private String remoteAddress;
+    private String address;
     // nacos group
     @Value("${spring.cloud.nacos.config.group}")
     private String groupId;
@@ -43,7 +43,7 @@ public class SentinelAutoConfiguration {
     private String dataId;
     // fill your namespace id,if you want to use namespace. for example: 0f5c7314-4983-4022-ad5a-347de1d1057d,you can get it on nacos's console
     @Value("${spring.cloud.nacos.config.namespace}")
-    private String NACOS_NAMESPACE_ID;
+    private String namespace;
 
     private static final String SYSTEM_DEFAULT_RESOURCE = "/system/default";
 
@@ -51,8 +51,8 @@ public class SentinelAutoConfiguration {
     public void init() {
 
         Properties properties = new Properties();
-        properties.put(PropertyKeyConst.SERVER_ADDR, remoteAddress);
-        properties.put(PropertyKeyConst.NAMESPACE, NACOS_NAMESPACE_ID);
+        properties.put(PropertyKeyConst.SERVER_ADDR, address);
+        properties.put(PropertyKeyConst.NAMESPACE, namespace);
 
         ReadableDataSource<String, List<FlowRule>>
                 flowRuleDataSource = new NacosDataSource<>(properties, groupId, dataId, this::allConfig);
