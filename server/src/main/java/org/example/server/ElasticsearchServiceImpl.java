@@ -32,7 +32,7 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.FetchSourceContext;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
-import org.example.domain.User;
+import org.example.domain.Test;
 import org.example.server.elasticsearch.ElasticsearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -131,14 +131,14 @@ public class ElasticsearchServiceImpl implements ElasticsearchService {
     }
 
     @Override
-    public boolean bulkRequest(String index, List<User> contents) throws Exception {
+    public boolean bulkRequest(String index, List<Test> contents) throws Exception {
         // 批量插入
         BulkRequest bulkRequest = new BulkRequest();
         bulkRequest.timeout(TimeValue.timeValueSeconds(1));
         contents.forEach(x ->
             bulkRequest.add(
                     new IndexRequest(index)
-                            .id(x.getId().toString())
+                            .id(x.getUid().toString())
                             .source(JSON.toJSONBytes(x, SerializerFeature.WRITE_MAP_NULL_FEATURES), XContentType.JSON))
         );
         BulkResponse bulkItemResponse = restHighLevelClient.bulk(bulkRequest, RequestOptions.DEFAULT);

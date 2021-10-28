@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import org.apache.dubbo.config.annotation.Reference;
-import org.example.domain.User;
+import org.example.domain.Test;
 import org.example.server.redisson.RedissonService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +17,7 @@ public class RedisController {
     RedissonService redissonService;
 
     @PostMapping("/user/add")
-    public String addUser(@RequestBody User user){
-        return redissonService.input(user);
+    public String addUser(@RequestBody Test test){
+        return redissonService.input(test);
     }
 }

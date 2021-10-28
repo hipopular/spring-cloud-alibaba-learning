@@ -14,9 +14,9 @@ public class SentinelExceptionHandler {
 
     public SentinelExceptionHandler() {
         WebCallbackManager.setUrlBlockHandler((request, response, ex) -> {
-            Map<String,Object> result = new HashMap<>();
-            result.put("code",-1);
-            result.put("msg","系统繁忙，请稍候再试！");
+            Map<String, Object> result = new HashMap<>();
+            result.put("code", -1);
+            result.put("msg", "系统繁忙，请稍候再试！");
             response.setStatus(200);
             response.setCharacterEncoding("utf-8");
             response.setHeader("Content-Type", "application/json;charset=utf-8");

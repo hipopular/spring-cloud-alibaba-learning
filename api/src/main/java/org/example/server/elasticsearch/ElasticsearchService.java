@@ -1,6 +1,6 @@
 package org.example.server.elasticsearch;
 
-import org.example.domain.User;
+import org.example.domain.Test;
 
 import java.util.List;
 import java.util.Map;
@@ -69,7 +69,7 @@ public interface ElasticsearchService {
      * @return
      * @throws Exception
      */
-    boolean bulkRequest(String index, List<User> contents) throws Exception;
+    boolean bulkRequest(String index, List<Test> contents) throws Exception;
 
     /**
      * 搜索请求
