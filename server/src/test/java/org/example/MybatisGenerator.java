@@ -13,7 +13,7 @@ public class MybatisGenerator {
          * 运行 jar
          */
         Runtime.getRuntime()
-                .exec("java -jar /Users/Hoon/Documents/workspace/popular/server/src/test/resources/lib/mybatis-plus-code-generator-3.5.1.3.jar");
+                .exec("java -jar /Users/Hoon/Documents/workspace/spring-cloud-alibaba/server/src/test/resources/lib/mybatis-plus-code-generator-3.5.1.3.jar");
 
         TimeUnit.MILLISECONDS.sleep(5500);
         /**
