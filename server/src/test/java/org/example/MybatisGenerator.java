@@ -1,6 +1,5 @@
 package org.example;
 
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
