@@ -111,7 +111,6 @@ public class ShardingDataSourceConfig {
 
     private String getActualDataNodes(List<String> nodes,String logicTable){
         return nodes.stream().map(e -> e.concat(".").concat(logicTable)).collect(Collectors.joining(","));
-
     }
 
 }
