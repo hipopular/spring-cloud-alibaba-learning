@@ -70,9 +70,9 @@ public class ShardingDataSourceConfig {
         for (String logicTable : standardLogicTable) {
             ShardingTableRuleConfiguration  tableRuleConfig = new ShardingTableRuleConfiguration(logicTable, this.getActualDataNodes(names,logicTable));
             // 配置分库策略
-            tableRuleConfig.setDatabaseShardingStrategy(new StandardShardingStrategyConfiguration("TENANT_ID", "dbShardingAlgorithm"));
+            tableRuleConfig.setDatabaseShardingStrategy(new StandardShardingStrategyConfiguration(UP_TENANT_ID, "dbShardingAlgorithm"));
             // 配置分表策略
-            tableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration("TENANT_ID", "tableShardingAlgorithm"));
+            tableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID, "tableShardingAlgorithm"));
             shardingRuleConfig.getTables().add(tableRuleConfig);
         }
 
@@ -80,9 +80,9 @@ public class ShardingDataSourceConfig {
         for (String logicTable : notStandardLogicTable) {
             ShardingTableRuleConfiguration  flowTableRuleConfig = new ShardingTableRuleConfiguration(logicTable, this.getActualDataNodes(names,logicTable));
             // 配置分库策略
-            flowTableRuleConfig.setDatabaseShardingStrategy(new StandardShardingStrategyConfiguration("TENANT_ID", "dbShardingAlgorithm"));
+            flowTableRuleConfig.setDatabaseShardingStrategy(new StandardShardingStrategyConfiguration(UP_TENANT_ID, "dbShardingAlgorithm"));
             // 配置分表策略
-            flowTableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration("TENANT_ID,CINEMA_UID", "flowTableShardingAlgorithm"));
+            flowTableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID.concat(",").concat(UP_CINEMA_ID), "flowTableShardingAlgorithm"));
 
             shardingRuleConfig.getTables().add(flowTableRuleConfig);
         }
