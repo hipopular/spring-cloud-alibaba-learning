@@ -21,9 +21,9 @@ public class ShardingFlowTablesAlgorithm implements ComplexKeysShardingAlgorithm
         if(CollectionUtils.isEmpty(tenantIdCollection)) {
             tenantIdCollection = shardingValue.getColumnNameAndShardingValuesMap().get(ShardingDataSourceConfig.LO_TENANT_ID);
         }
-        Collection<String> cinemaUidCollection = shardingValue.getColumnNameAndShardingValuesMap().get(ShardingDataSourceConfig.UP_CINEMA_ID);
+        Collection<String> cinemaUidCollection = shardingValue.getColumnNameAndShardingValuesMap().get(ShardingDataSourceConfig.UP_CINEMA_UID);
         if(CollectionUtils.isEmpty(cinemaUidCollection)){
-            cinemaUidCollection = shardingValue.getColumnNameAndShardingValuesMap().get(ShardingDataSourceConfig.LO_CINEMA_ID);
+            cinemaUidCollection = shardingValue.getColumnNameAndShardingValuesMap().get(ShardingDataSourceConfig.LO_CINEMA_UID);
         }
         String tenantId = tenantIdCollection.stream().findFirst().get();
         String cinemaUid = cinemaUidCollection.stream().findFirst().get();

@@ -31,9 +31,9 @@ import org.springframework.context.annotation.Configuration;
 public class ShardingDataSourceConfig {
 
     public final static String UP_TENANT_ID = "TENANT_ID";
-    public final static String UP_CINEMA_ID = "CINEMA_ID";
+    public final static String UP_CINEMA_UID = "CINEMA_UID";
     public final static String LO_TENANT_ID = "tenant_id";
-    public final static String LO_CINEMA_ID = "cinema_id";
+    public final static String LO_CINEMA_UID = "cinema_uid";
 
     private Map<String,String> tenantGroup;
 
@@ -82,7 +82,7 @@ public class ShardingDataSourceConfig {
             // 配置分库策略
             flowTableRuleConfig.setDatabaseShardingStrategy(new StandardShardingStrategyConfiguration(UP_TENANT_ID, "dbShardingAlgorithm"));
             // 配置分表策略
-            flowTableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID.concat(",").concat(UP_CINEMA_ID), "flowTableShardingAlgorithm"));
+            flowTableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID.concat(",").concat(UP_CINEMA_UID), "flowTableShardingAlgorithm"));
 
             shardingRuleConfig.getTables().add(flowTableRuleConfig);
         }
