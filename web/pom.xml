@@ -71,6 +71,32 @@
       <groupId>org.example</groupId>
       <artifactId>api</artifactId>
       <version>${project.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>mybatis</artifactId>
+          <groupId>org.mybatis</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>mybatis-plus</artifactId>
+          <groupId>com.baomidou</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>mybatis-plus-annotation</artifactId>
+          <groupId>com.baomidou</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>mybatis-plus-boot-starter</artifactId>
+          <groupId>com.baomidou</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>mybatis-plus-core</artifactId>
+          <groupId>com.baomidou</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>mybatis-plus-extension</artifactId>
+          <groupId>com.baomidou</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>

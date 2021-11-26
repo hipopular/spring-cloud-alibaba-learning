@@ -23,6 +23,5 @@ public class JdbcTest {
 
     @Test
     public void testSelect() {
-        final QueryWrapper<org.example.domain.Test> age = new QueryWrapper<org.example.domain.Test>().eq("age", 18);
     }
 }
