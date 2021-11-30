@@ -74,6 +74,7 @@ public class ShardingDataSourceConfig {
             // 配置分表策略
             tableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID, "tableShardingAlgorithm"));
             shardingRuleConfig.getTables().add(tableRuleConfig);
+            shardingRuleConfig.getBindingTableGroups().add(logicTable);
         }
 
         String[] notStandardLogicTable = logicTable.get(1).split(",");
@@ -85,6 +86,7 @@ public class ShardingDataSourceConfig {
             flowTableRuleConfig.setTableShardingStrategy(new ComplexShardingStrategyConfiguration(UP_TENANT_ID.concat(",").concat(UP_CINEMA_UID), "flowTableShardingAlgorithm"));
 
             shardingRuleConfig.getTables().add(flowTableRuleConfig);
+            shardingRuleConfig.getBindingTableGroups().add(logicTable);
         }
 
         Properties db = new Properties();
