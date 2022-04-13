@@ -10,6 +10,7 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 import javax.sql.DataSource;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.driver.api.ShardingSphereDataSourceFactory;
 import org.apache.shardingsphere.infra.config.algorithm.ShardingSphereAlgorithmConfiguration;
 import org.apache.shardingsphere.sharding.algorithm.sharding.classbased.ClassBasedShardingAlgorithmStrategyType;
@@ -22,10 +23,12 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 /**
  * Created by huen on 2021/11/19 18:02
  */
 @Data
+@Slf4j
 @Configuration
 @ConfigurationProperties(prefix = "sharding.datasource")
 public class ShardingDataSourceConfig {
@@ -56,6 +59,9 @@ public class ShardingDataSourceConfig {
     @Bean
     @RefreshScope
     public DataSource dataSource() throws SQLException {
+
+        log.info(" init sharding datasource .......... ");
+
         Map<String, DataSource> dataSourceMap = new HashMap<>();
 
         for (int i = 0; i < names.size(); i++) {
@@ -112,7 +118,7 @@ public class ShardingDataSourceConfig {
         Properties prop = new Properties();
         prop.setProperty("sql-show", "true");
 
-        return ShardingSphereDataSourceFactory .createDataSource(dataSourceMap, Collections.singleton(shardingRuleConfig), prop);
+        return ShardingSphereDataSourceFactory.createDataSource(dataSourceMap, Collections.singleton(shardingRuleConfig), prop);
     }
 
     private String getActualDataNodes(List<String> nodes,String logicTable){
