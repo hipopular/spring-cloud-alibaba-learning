@@ -21,5 +21,18 @@ public class UserServiceImpl implements UserService{
                           @PathVariable("cinemaUid") String cinemaUid,
                           @PathVariable("id") long id){
         return userMapper.query(tenantId,cinemaUid,id);
+
+    }
+
+    @GetMapping("/sharding/{code}")
+    public Object sharding(@PathVariable("code") String code){
+        return userMapper.sharding(code);
+
+    }
+
+    @GetMapping("/sharding/2/{code}")
+    public Object sharding2(@PathVariable("code") String code){
+        return userMapper.sharding2(code);
+
     }
 }

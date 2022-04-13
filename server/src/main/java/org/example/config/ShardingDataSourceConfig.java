@@ -30,6 +30,10 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "sharding.datasource")
 public class ShardingDataSourceConfig {
 
+    private static final String STRATEGY_KEY = "strategy";
+
+    private static final String ALGORITHM_CLASS_NAME_KEY = "algorithmClassName";
+
     public final static String UP_TENANT_ID = "TENANT_ID";
     public final static String UP_CINEMA_UID = "CINEMA_UID";
     public final static String LO_TENANT_ID = "tenant_id";
@@ -90,16 +94,16 @@ public class ShardingDataSourceConfig {
         }
 
         Properties db = new Properties();
-        db.setProperty("strategy", ClassBasedShardingAlgorithmStrategyType.STANDARD.name());
-        db.setProperty("algorithmClassName", ShardingDataSourceAlgorithm.class.getName());
+        db.setProperty(STRATEGY_KEY, ClassBasedShardingAlgorithmStrategyType.STANDARD.name());
+        db.setProperty(ALGORITHM_CLASS_NAME_KEY, ShardingDataSourceAlgorithm.class.getName());
 
         Properties table = new Properties();
-        table.setProperty("strategy", ClassBasedShardingAlgorithmStrategyType.COMPLEX.name());
-        table.setProperty("algorithmClassName", ShardingTablesAlgorithm.class.getName());
+        table.setProperty(STRATEGY_KEY, ClassBasedShardingAlgorithmStrategyType.COMPLEX.name());
+        table.setProperty(ALGORITHM_CLASS_NAME_KEY, ShardingTablesAlgorithm.class.getName());
 
         Properties flowTable = new Properties();
-        flowTable.setProperty("strategy", ClassBasedShardingAlgorithmStrategyType.COMPLEX.name());
-        flowTable.setProperty("algorithmClassName", ShardingFlowTablesAlgorithm.class.getName());
+        flowTable.setProperty(STRATEGY_KEY, ClassBasedShardingAlgorithmStrategyType.COMPLEX.name());
+        flowTable.setProperty(ALGORITHM_CLASS_NAME_KEY, ShardingFlowTablesAlgorithm.class.getName());
 
         shardingRuleConfig.getShardingAlgorithms().put("dbShardingAlgorithm",new ShardingSphereAlgorithmConfiguration("CLASS_BASED",db));
         shardingRuleConfig.getShardingAlgorithms().put("tableShardingAlgorithm",new ShardingSphereAlgorithmConfiguration("CLASS_BASED",table));
