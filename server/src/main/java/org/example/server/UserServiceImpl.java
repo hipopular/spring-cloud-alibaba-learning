@@ -3,7 +3,10 @@ package org.example.server;
 import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.exception.NacosException;
+import lombok.Getter;
+import lombok.Setter;
 import org.example.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +22,32 @@ import java.util.Properties;
  * Created by huen on 2021/11/23 17:03
  */
 //@Service
+@Setter
+@Getter
 @RestController
 public class UserServiceImpl implements UserService{
+
+    @Value("${spring.cloud.nacos.config.server-addr}")
+    private String serverAddr;
+
+    @Value("${spring.cloud.nacos.config.namespace}")
+    private String namespace;
+
+    @Value("${spring.cloud.nacos.config.username}")
+    private String username;
+
+    @Value("${spring.cloud.nacos.config.password}")
+    private String password;
+
+    @Value("${spring.application.name}-${spring.profiles.active}.properties")
+    private String dataId;
+
+    @Value("${spring.cloud.nacos.config.group}")
+    private String group;
+
+    private final static String UPDATE_DATASOURCE_KEY = "sharding.datasource.tenantGroup.ds2";
+
+    private final static String  PROPERTIES_DELIMITER = "=";
 
     @Resource
     UserMapper userMapper;
@@ -48,7 +75,7 @@ public class UserServiceImpl implements UserService{
     @GetMapping("/get/config")
     public String getConfig() throws NacosException, IOException {
         ConfigService configService = this.createConfigService();
-        String config = configService.getConfig("server-dev.properties", "popular", 100);
+        String config = configService.getConfig(dataId, group, 100);
         System.out.println(config);
         Properties properties = this.nacosConfig(config, "properties");
         properties.stringPropertyNames().forEach(System.out::println);
@@ -59,17 +86,18 @@ public class UserServiceImpl implements UserService{
     @GetMapping("/update/config")
     public Boolean updateConfig() throws NacosException{
         ConfigService configService = this.createConfigService();
-        String config = configService.getConfig("server-dev.properties", "popular", 100);
-        config = config.replaceFirst("sharding.datasource.tenantGroup.ds2=","sharding.datasource.tenantGroup.ds2=339158,");
-        return configService.publishConfig("server-dev.properties", "popular", config);
+        String config = configService.getConfig(dataId, group, 100);
+        config = config.replaceFirst(UPDATE_DATASOURCE_KEY.concat(PROPERTIES_DELIMITER),UPDATE_DATASOURCE_KEY.concat(PROPERTIES_DELIMITER).concat("339158,"));
+        return configService.publishConfig(dataId, group, config);
     }
 
 
     private ConfigService createConfigService() throws NacosException {
-        String serverAddr = "192.168.104.124:8848";
         Properties properties = new Properties();
         properties.put("serverAddr", serverAddr);
-        properties.put("namespace", "19993610-ad88-4749-9dd7-b1a355146ddd");
+        properties.put("namespace", namespace);
+        properties.put("username", username);
+        properties.put("password", password);
         return NacosFactory.createConfigService(properties);
     }
 

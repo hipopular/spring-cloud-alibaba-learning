@@ -23,8 +23,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.cloud.alibaba>2.1.0.RELEASE</spring.cloud.alibaba>
-    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+    <spring.cloud.alibaba>2.2.1.RELEASE</spring.cloud.alibaba>
+    <spring.boot.version>2.2.1.RELEASE</spring.boot.version>
     <elasticsearch.version>7.3.0</elasticsearch.version>
   </properties>
 

@@ -13,8 +13,8 @@ import org.springframework.cloud.stream.messaging.Source;
  * ServerApplication
  */
 @EnableDubbo
-@EnableBinding({ Source.class, Sink.class })
 @EnableDiscoveryClient
+@EnableBinding({ Source.class, Sink.class })
 @SpringBootApplication(exclude= {DruidDataSourceAutoConfigure.class})
 public class ServerApplication {
 
