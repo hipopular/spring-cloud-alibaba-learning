@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService{
     public Boolean updateConfig() throws NacosException{
         ConfigService configService = this.createConfigService();
         String config = configService.getConfig("server-dev.properties", "popular", 100);
-        config = config.replace("sharding.datasource.tenantGroup.ds2=","sharding.datasource.tenantGroup.ds2=339158,");
+        config = config.replaceFirst("sharding.datasource.tenantGroup.ds2=","sharding.datasource.tenantGroup.ds2=339158,");
         return configService.publishConfig("server-dev.properties", "popular", config);
     }
 
