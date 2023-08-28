@@ -53,7 +53,7 @@ public class ${entityName} extends Model<${entityName}> {
 </#list>
 
 	@Override
-    protected Serializable pkVal() {
+    public Serializable pkVal() {
         return this.id;
     }
 }

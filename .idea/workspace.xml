@@ -4,30 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa368687-65a2-4ecb-9a24-63c41b2df42d" name="Changes" comment="add test class">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/aid/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/aid/JsonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/aid/PageParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/convert/DateType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/convert/DbColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/convert/IColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/convert/ITypeConvert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/convert/MySqlTypeConvert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/entity/BasisInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/entity/GeneratorFileUrl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/entity/PropertyInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/entity/ResultJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/EntityInfoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/FreemarkerUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/MySqlToJavaUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MainTest.java" afterDir="false" />
+    <list default="true" id="aa368687-65a2-4ecb-9a24-63c41b2df42d" name="Changes" comment="mybatis generator">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/resources/lib/mybatis-plus-code-generator-3.5.1.3.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +24,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hipopular&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="41218b2a-e84b-414c-b8f8-6fa4409b99a7" />
+        <option name="url" value="https://github.com/hipopular/spring-cloud-alibaba-learnig.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,17 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/spring-cloud-alibaba-learnig/server/src/main/java/org/example/code/generator&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Workspace/spring-cloud-alibaba-learning",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36091954",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\spring-cloud-alibaba-learnig\server\src\main\java\org\example\code\generator" />
@@ -160,6 +158,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Hoon\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="aa368687-65a2-4ecb-9a24-63c41b2df42d" name="Changes" comment="" />
@@ -176,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690336136813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mybatis generator">
+      <option name="closed" value="true" />
+      <created>1693203930860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693203930860</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,22 +201,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test class" />
+    <MESSAGE value="mybatis generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="mybatis generator" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/EntityInfoUtil.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/EntityInfoUtil.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

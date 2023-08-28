@@ -15,7 +15,6 @@ public class Generator {
     public static final String DAO_IMPL = "daoImpl";
     public static final String SERVICE = "service";
     public static final String SERVICE_IMPL = "serviceImpl";
-    public static final String CONTROLLER = "controller";
 
     //①创建实体类
     public static ResultJson createEntity(String url, BasisInfo bi) {
@@ -53,20 +52,6 @@ public class Generator {
         String fileUrl = getGeneratorFileUrl(url, bi.getServiceImplUrl(), bi.getEntityName(), SERVICE_IMPL);
         return FreemarkerUtil.createFile(bi, "serviceImpl.ftl", fileUrl);
     }
-
-    //⑥创建CONTROLLER
-    public static ResultJson createController(String url, BasisInfo bi) {
-        createAbstractController(url, bi); //保证父类一直存在
-        String fileUrl = getGeneratorFileUrl(url, bi.getControllerUrl(), bi.getEntityName(), CONTROLLER);
-        return FreemarkerUtil.createFile(bi, "controller.ftl", fileUrl);
-    }
-
-    //⑦创建抽象的CONTROLLER
-    public static void createAbstractController(String url, BasisInfo bi) {
-        String fileUrl = getGeneratorFileUrl(url, bi.getAbstractControllerUrl(), "Abstract", CONTROLLER);
-        FreemarkerUtil.createFile(bi, "AbstractController.ftl", fileUrl);
-    }
-
 
     //生成文件路径和名字
     public static String getGeneratorFileUrl(String url, String packageUrl, String entityName, String type) {
