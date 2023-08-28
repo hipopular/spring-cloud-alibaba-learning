@@ -23,8 +23,8 @@ public class MainTest implements Closeable {
     public static void main(String[] args) {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start("main start ...");
-        try (MainTest mainTest = new MainTest()) {
-            thenRun();
+        try (MainTest ignored = new MainTest()) {
+            join();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -85,7 +85,7 @@ public class MainTest implements Closeable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-//            int a = 10 / 0;
+            int a = 10 / 0;
             cc[0] = 1;
             return cc;
         }, executor).handleAsync((v, e) -> {
