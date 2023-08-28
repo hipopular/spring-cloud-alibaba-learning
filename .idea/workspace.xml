@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa368687-65a2-4ecb-9a24-63c41b2df42d" name="Changes" comment="mybatis generator">
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/xml.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MathTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/FreemarkerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/FreemarkerUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/AbstractController.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/controller.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/controller.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/dao.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/mapper.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/mapper.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/serviceImpl.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/serviceImpl.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +127,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MathTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.MathTest" />
+      <module name="server" />
+      <shortenClasspath name="MANIFEST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MybatisGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.MybatisGenerator" />
       <module name="server" />
@@ -157,6 +164,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MybatisGenerator" />
+        <item itemvalue="Application.MathTest" />
         <item itemvalue="Application.MapTest" />
         <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.IpTest" />
@@ -199,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693207566329</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="mybatis generator">
+      <option name="closed" value="true" />
+      <created>1693224937678</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693224937678</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

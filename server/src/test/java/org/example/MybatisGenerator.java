@@ -1,6 +1,7 @@
 package org.example;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.RandomUtil;
 import org.example.code.generator.entity.BasisInfo;
 import org.example.code.generator.util.EntityInfoUtil;
 import org.example.code.generator.util.Generator;
@@ -26,7 +27,7 @@ public class MybatisGenerator {
 
     public static final String TIME = DateUtil.format(new Date(),"hh:mm");
     public static final String DATE = DateUtil.format(new Date(),"yyyy/MM/dd");
-    public static final String AGILE = new Date().getTime() + "";
+    public static final String AGILE = String.valueOf(System.currentTimeMillis()).concat(RandomUtil.randomNumbers(4));
     // 路径信息，分开路径方便聚合工程项目，微服务项目
     public static final String ENTITY_URL = "com.bgy.salesContract.entity";
     public static final String DAO_URL = "com.bgy.salesContract.mapper";
