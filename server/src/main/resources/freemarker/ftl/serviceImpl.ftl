@@ -1,7 +1,7 @@
 package ${serviceImplUrl};
 
 import ${entityUrl}.${entityName};
-import ${daoUrl}.${entityName}Dao;
+import ${daoUrl}.${entityName}Mapper;
 import ${serviceUrl}.${entityName}Service;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -12,6 +12,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
  * 
  */
 @Service
-public class ${entityName}ServiceImpl  extends ServiceImpl<${entityName}Dao, ${entityName}> implements ${entityName}Service  {
+public class ${entityName}ServiceImpl  extends ServiceImpl<${entityName}Mapper, ${entityName}> implements ${entityName}Service  {
 	
 }

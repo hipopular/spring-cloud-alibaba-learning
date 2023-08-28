@@ -58,10 +58,10 @@ public class FreemarkerUtil {
             case "entity.ftl":
                 name = ".java";
                 break;
-            case "dao.ftl":
-                name = "Dao.java";
-                break;
             case "mapper.ftl":
+                name = "Mapper.java";
+                break;
+            case "xml.ftl":
                 name = "Mapper.xml";
                 break;
             case "service.ftl":

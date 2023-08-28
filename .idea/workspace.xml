@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa368687-65a2-4ecb-9a24-63c41b2df42d" name="Changes" comment="mybatis generator">
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/xml.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/FreemarkerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/FreemarkerUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/example/code/generator/util/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/AbstractController.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/controller.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/controller.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/dao.ftl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/entity.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/org/example/MybatisGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/mapper.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/mapper.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/serviceImpl.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/freemarker/ftl/serviceImpl.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,20 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Workspace/spring-cloud-alibaba-learning",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36091954",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/spring-cloud-alibaba-learning&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36091954&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\spring-cloud-alibaba-learnig\server\src\main\java\org\example\code\generator" />
@@ -185,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693203930860</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mybatis generator">
+      <option name="closed" value="true" />
+      <created>1693207566329</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693207566329</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

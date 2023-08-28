@@ -11,7 +11,7 @@ import java.util.List;
 public class Generator {
     //路径信息
     public static final String ENTITY = "entity";
-    public static final String DAO = "dao";
+    public static final String MAPPER = "mapper";
     public static final String DAO_IMPL = "daoImpl";
     public static final String SERVICE = "service";
     public static final String SERVICE_IMPL = "serviceImpl";
@@ -24,8 +24,8 @@ public class Generator {
 
     //②创建DAO
     public static ResultJson createDao(String url, BasisInfo bi) {
-        String fileUrl = getGeneratorFileUrl(url, bi.getDaoUrl(), bi.getEntityName(), DAO);
-        return FreemarkerUtil.createFile(bi, "dao.ftl", fileUrl);
+        String fileUrl = getGeneratorFileUrl(url, bi.getDaoUrl(), bi.getEntityName(), MAPPER);
+        return FreemarkerUtil.createFile(bi, "mapper.ftl", fileUrl);
     }
 
     //③创建mapper配置文件
@@ -38,7 +38,7 @@ public class Generator {
         }
         agile = new StringBuilder(agile.substring(0, agile.length() - 2));
         bi.setAgile(agile.toString());
-        return FreemarkerUtil.createFile(bi, "mapper.ftl", fileUrl);
+        return FreemarkerUtil.createFile(bi, "xml.ftl", fileUrl);
     }
 
     //④创建SERVICE
@@ -58,8 +58,8 @@ public class Generator {
         switch (type) {
             case "entity":
                 return url + pageToUrl(packageUrl) + entityName + ".java";
-            case "dao":
-                return url + pageToUrl(packageUrl) + entityName + "Dao.java";
+            case "mapper":
+                return url + pageToUrl(packageUrl) + entityName + "Mapper.java";
             case "daoImpl":
                 return url + pageToUrl(packageUrl) + entityName + "Mapper.xml";
             case "service":
